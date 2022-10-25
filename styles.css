@@ -11,6 +11,10 @@ div {
   background-color: green;
 }
 
+.hula {
+  display: none;
+}
+
 
 nav {
   background-color: black;
@@ -28,7 +32,14 @@ nav {
   background-color: lightgreen;
   box-shadow: 5px 15px 5px darkgreen;
   margin-left: 25px;
+  display: none;
 
+}
+
+nav:hover .dropdown-box {
+  display: block;
+  position: absolute;
+  z-index: 10;
 }
 
 li {
@@ -38,9 +49,35 @@ li {
 
 
 
-
-
 li:hover {
   background-color: grey;
 }
 
+@media screen and (min-width: 576px) {
+  .dropdown-box {
+    display: block;
+    width: 100%;
+    margin: 0px;
+  }
+
+  .fas {
+    display: none;
+  }
+
+  nav:hover .dropdown-box {
+    position: static;
+  }
+
+  .hula {
+    display: block;
+    background-color: purple;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  li {display: inline-block;}
+  
+  .hula {
+    background-color: yellow;
+  }
+}
